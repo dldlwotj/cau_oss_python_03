@@ -21,18 +21,10 @@ def arithmetic_ops(op):
     num2 = int(input("input 2nd number:"))
     return num1, num2, op(num1, num2)
 
-<<<<<<< HEAD
 # +와 -는 함수로 정의한다
 # [fill this area] +와 -함수 정의
 def add(x, y) : return x + y
 def sub(x, y) : return x - y
-=======
-def add(x, y) : return x + y
-def sub(x, y) : return x - y
-# +와 -는 함수로 정의한다
-# [fill this area] +와 -함수 정의
-#
->>>>>>> 4b285ed60fd08969122108ff4c394ae824da88f2
 
 while True:
     op = input("input operation:")
