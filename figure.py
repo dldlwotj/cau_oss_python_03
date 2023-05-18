@@ -57,7 +57,7 @@ def area_circle(length):
     return math.pi * (length**2)
 
 def area_regular_triangle(length):
-    """정삼각형의 한 변의 길이를 입력받아 정사각형의 넓이를 구하는 함수입니다.
+    """정삼각형의 한 변의 길이를 입력받아 정삼각형의 넓이를 구하는 함수입니다.
     Args:
         length (int or float): 정삼각형의 한 변의 길이입니다.
     Returns:
