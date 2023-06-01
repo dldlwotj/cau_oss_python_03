@@ -14,7 +14,7 @@ try:
     rectangle = figure.area_rectangle(width, height)
     print(rectangle)
 except ValueError:
-    print("Please input positive number for width and height!")
+    print("please input positive number for width and height")
 # implement exception handler
 
 myline.set_length(20, 30)
@@ -23,7 +23,7 @@ try:
     right_triangle = figure.area_right_triangle(width, height)
     print(right_triangle)
 except ValueError:
-    print("Please input positive number for width and height!")
+    print("please input positive number for width and height")
 # implement exception handler
 
 myline.set_length(30, 40)
@@ -32,4 +32,5 @@ try:
     ellipse = figure.area_ellipse(width, height)
     print(ellipse)
 except ValueError:
-    print("Please input positive number for width and height!")
+    print("please input positive number for width and height")
+# %%
