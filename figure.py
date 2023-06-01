@@ -1,77 +1,77 @@
 """
-figure ¸ğµâÀº ±×¸²°ú °ü·ÃµÈ ÇÔ¼ö ¹× Å¬·¡½º¸¦ Á¦°øÇÏ´Â ¸ğµâÀÔ´Ï´Ù.
-'line' Å¬·¡½º¸¦ ÀÌ¿ëÇÏ¿© ¼±ÀÇ ±æÀÌ¸¦ ¼³Á¤ÇÏ°Å³ª ÂüÁ¶ÇÏ´Â ÀÛ¾÷À» ¼öÇàÇÏ¸ç
-'area_rectangle', 'area_ellipse', area_right_triangle' ÇÔ¼ö·Î
-°¢°¢ Á÷»ç°¢Çü, Å¸¿ø, Á÷°¢»ï°¢ÇüÀÇ ³ĞÀÌ¸¦ ¹İÈ¯ÇÕ´Ï´Ù.
+figure ëª¨ë“ˆì€ ê·¸ë¦¼ê³¼ ê´€ë ¨ëœ í•¨ìˆ˜ ë° í´ë˜ìŠ¤ë¥¼ ì œê³µí•˜ëŠ” ëª¨ë“ˆì…ë‹ˆë‹¤.
+'line' í´ë˜ìŠ¤ë¥¼ ì´ìš©í•˜ì—¬ ì„ ì˜ ê¸¸ì´ë¥¼ ì„¤ì •í•˜ê±°ë‚˜ ì°¸ì¡°í•˜ëŠ” ì‘ì—…ì„ ìˆ˜í–‰í•˜ë©°
+'area_rectangle', 'area_ellipse', area_right_triangle' í•¨ìˆ˜ë¡œ
+ê°ê° ì§ì‚¬ê°í˜•, íƒ€ì›, ì§ê°ì‚¼ê°í˜•ì˜ ë„“ì´ë¥¼ ë°˜í™˜í•©ë‹ˆë‹¤.
 """
 
 import math
 
 class line:
     """
-    'line' Å¬·¡½º´Â ¼±ÀÇ ±æÀÌ¿¡ ´ëÇØ ÀúÀåÇÏ´Â Å¬·¡½ºÀÔ´Ï´Ù.
-    º¯¼ö·Î´Â ¿ÜºÎ¿¡¼­ Á¢±ÙÇÒ ¼ö ¾ø´Â '__width', '__height'°¡ ÀÖÀ¸¸ç,
-    ÇØ´ç º¯¼ö¸¦ ¼öÁ¤ÇÏ°í Á¢±ÙÇÏ±â À§ÇØ
-    'set_length'¿Í 'get_length' ¸Ş¼Òµå¸¦ Á¦°øÇÕ´Ï´Ù.
+    'line' í´ë˜ìŠ¤ëŠ” ì„ ì˜ ê¸¸ì´ì— ëŒ€í•´ ì €ì¥í•˜ëŠ” í´ë˜ìŠ¤ì…ë‹ˆë‹¤.
+    ë³€ìˆ˜ë¡œëŠ” ì™¸ë¶€ì—ì„œ ì ‘ê·¼í•  ìˆ˜ ì—†ëŠ” '__width', '__height'ê°€ ìˆìœ¼ë©°,
+    í•´ë‹¹ ë³€ìˆ˜ë¥¼ ìˆ˜ì •í•˜ê³  ì ‘ê·¼í•˜ê¸° ìœ„í•´
+    'set_length'ì™€ 'get_length' ë©”ì†Œë“œë¥¼ ì œê³µí•©ë‹ˆë‹¤.
     """
     __width = 0
     __height = 0
 
     def __init__(self, width, height):
-        """Å¬·¡½º¸¦ »ı¼ºÇÒ ¶§ Ã³À½ °¡·Î¿Í ¼¼·ÎÀÇ ±æÀÌ¸¦ ÀÔ·Â¹Ş½À´Ï´Ù.
+        """í´ë˜ìŠ¤ë¥¼ ìƒì„±í•  ë•Œ ì²˜ìŒ ê°€ë¡œì™€ ì„¸ë¡œì˜ ê¸¸ì´ë¥¼ ì…ë ¥ë°›ìŠµë‹ˆë‹¤.
         Args:
-            width (int or float): ÃÊ±â ¼±ÀÇ °¡·Î ±æÀÌ
-            height (int or float): ÃÊ±â ¼±ÀÇ ¼¼·Î ±æÀÌ
+            width (int or float): ì´ˆê¸° ì„ ì˜ ê°€ë¡œ ê¸¸ì´
+            height (int or float): ì´ˆê¸° ì„ ì˜ ì„¸ë¡œ ê¸¸ì´
         """
         self.__width = width
         self.__height = height
 
     def set_length(self, width, height):
-        """¼±ÀÇ ±æÀÌ¸¦ ¼öÁ¤ÇÕ´Ï´Ù.
+        """ì„ ì˜ ê¸¸ì´ë¥¼ ìˆ˜ì •í•©ë‹ˆë‹¤.
         Args:
-            width (int or float): ¼öÁ¤ÇÏ°íÀÚ ÇÏ´Â °¡·Î ±æÀÌ
-            height (int or float): ¼öÁ¤ÇÏ°íÀÚ ÇÏ´Â ¼¼·Î ±æÀÌ
+            width (int or float): ìˆ˜ì •í•˜ê³ ì í•˜ëŠ” ê°€ë¡œ ê¸¸ì´
+            height (int or float): ìˆ˜ì •í•˜ê³ ì í•˜ëŠ” ì„¸ë¡œ ê¸¸ì´
         """
         self.__width = width
         self.__height = height
 
     def get_length(self):
-        """°´Ã¼¿¡ ÀúÀåµÈ ¼±ÀÇ ±æÀÌ¸¦ ¹İÈ¯ÇÕ´Ï´Ù.
+        """ê°ì²´ì— ì €ì¥ëœ ì„ ì˜ ê¸¸ì´ë¥¼ ë°˜í™˜í•©ë‹ˆë‹¤.
         Returns:
-            int or float: ÀúÀåµÈ ¼±ÀÇ ±æÀÌ
+            int or float: ì €ì¥ëœ ì„ ì˜ ê¸¸ì´
         """
         return self.__width, self.__height
     
 
 def area_rectangle(width, height):
-    """±æÀÌ¸¦ ÀÔ·Â¹Ş¾Æ Á÷»ç°¢ÇüÀÇ ³ĞÀÌ¸¦ ±¸ÇÏ´Â ÇÔ¼ö
+    """ê¸¸ì´ë¥¼ ì…ë ¥ë°›ì•„ ì§ì‚¬ê°í˜•ì˜ ë„“ì´ë¥¼ êµ¬í•˜ëŠ” í•¨ìˆ˜
     Args:
-        width (int or float): ¹Øº¯ÀÇ ±æÀÌ
-        height (int or float): ³ôÀÌ
+        width (int or float): ë°‘ë³€ì˜ ê¸¸ì´
+        height (int or float): ë†’ì´
     Returns:
-        int or float: Á÷»ç°¢ÇüÀÇ ³ĞÀÌ¸¦ ¹İÈ¯
+        int or float: ì§ì‚¬ê°í˜•ì˜ ë„“ì´ë¥¼ ë°˜í™˜
     """
     if width <= 0 or height <= 0: raise ValueError
     return width * height
 
 def area_ellipse(width, height):
-    """±æÀÌ¸¦ ÀÔ·Â¹Ş¾Æ Å¸¿øÀÇ ³ĞÀÌ¸¦ ±¸ÇÏ´Â ÇÔ¼ö
+    """ê¸¸ì´ë¥¼ ì…ë ¥ë°›ì•„ íƒ€ì›ì˜ ë„“ì´ë¥¼ êµ¬í•˜ëŠ” í•¨ìˆ˜
     Args:
-        width (int or float): ÂªÀº ¹İÁö¸§ÀÇ ±æÀÌ
-        height (int or float): ±ä ¹İÁö¸§ÀÇ ±æÀÌ
+        width (int or float): ì§§ì€ ë°˜ì§€ë¦„ì˜ ê¸¸ì´
+        height (int or float): ê¸´ ë°˜ì§€ë¦„ì˜ ê¸¸ì´
     Returns:
-        int or float: Å¸¿øÀÇ ³ĞÀÌ¸¦ ¹İÈ¯
+        int or float: íƒ€ì›ì˜ ë„“ì´ë¥¼ ë°˜í™˜
     """
     if width <= 0 or height <= 0: raise ValueError
     return math.pi * width * height
 
 def area_right_triangle(width, height):
-    """±æÀÌ¸¦ ÀÔ·Â¹Ş¾Æ Á÷°¢»ï°¢ÇüÀÇ ³ĞÀÌ¸¦ ±¸ÇÏ´Â ÇÔ¼ö
+    """ê¸¸ì´ë¥¼ ì…ë ¥ë°›ì•„ ì§ê°ì‚¼ê°í˜•ì˜ ë„“ì´ë¥¼ êµ¬í•˜ëŠ” í•¨ìˆ˜
     Args:
-        width (int or float): ¹Øº¯ÀÇ ±æÀÌ
-        height (int or float): ³ôÀÌ
+        width (int or float): ë°‘ë³€ì˜ ê¸¸ì´
+        height (int or float): ë†’ì´
     Returns:
-        int or float: Á÷°¢»ï°¢ÇüÀÇ ³ĞÀÌ¸¦ ¹İÈ¯
+        int or float: ì§ê°ì‚¼ê°í˜•ì˜ ë„“ì´ë¥¼ ë°˜í™˜
     """
     if width <= 0 or height <= 0: raise ValueError
     return width * height / 2

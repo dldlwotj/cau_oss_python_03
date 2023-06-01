@@ -1,8 +1,6 @@
-# %%
-
 """
-area_rectangle, area_right_triangle, area_ellipse ÇÔ¼öµé¿¡¼­
-¿¹¿Ü ¹ß»ı ½Ã 0ÀÌÇÏÀÇ °ªÀº ÀÔ·ÂÇÒ ¼ö ¾ø½À´Ï´Ù¸¦ Ãâ·ÂÇÏµµ·Ï º¯°æ!
+area_rectangle, area_right_triangle, area_ellipse í•¨ìˆ˜ë“¤ì—ì„œ
+ì˜ˆì™¸ ë°œìƒ ì‹œ 0ì´í•˜ì˜ ê°’ì€ ì…ë ¥í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤ë¥¼ ì¶œë ¥í•˜ë„ë¡ ë³€ê²½!
 """
 
 import figure
